@@ -17,9 +17,7 @@ class EditProfile extends StatelessWidget {
     final data = Provider.of<EditProfileController>(context, listen: false);
     data.displayName();
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 216, 192, 119),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 216, 192, 119),
         elevation: 1,
       ),
       body: Container(
@@ -46,7 +44,7 @@ class EditProfile extends StatelessWidget {
                   return ListView(
                     children: [
                       const Text(
-                        "Edit Profile",
+                        "Profile",
                         style: TextStyle(
                             fontSize: 25, fontWeight: FontWeight.w500),
                       ),

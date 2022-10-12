@@ -1,3 +1,4 @@
+import 'package:authentication/view/add_student.dart';
 import 'package:authentication/view/edit_profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,13 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AddStudent()));
+        },
+        child: const Icon(Icons.add),
+      ),
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -23,7 +31,7 @@ class MyHomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    'USER DETAILS',
+                    'Student Details',
                     style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                   ),
                   IconButton(
@@ -36,14 +44,7 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 40,
-              ),
-              Text('signed in as ${user.email!}',
-                  style: const TextStyle(
-                    fontSize: 20,
-                  )),
-              const SizedBox(
-                height: 550,
+                height: 510,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
